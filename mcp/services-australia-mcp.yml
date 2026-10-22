@@ -1,0 +1,25 @@
+name: Services Australia MCP Server
+type: MCPServer
+generated: '2026-10-22'
+method: none
+status: none
+description: >-
+  No official Services Australia MCP server (remote or local-stdio) was found. A web search for a
+  Services Australia MCP server returned nothing relevant, the pre-flight contract discovery reported
+  MCP absent on healthsoftware.humanservices.gov.au and www.servicesaustralia.gov.au, and no public
+  OpenAPI contract exists in this repo from which a candidate tool list could be derived (the health
+  and aged care web service specifications are distributed only to registered vendors through the
+  Health Systems Developer Portal).
+evidence:
+  - check: web search "Services Australia" MCP server Model Context Protocol
+    result: no relevant results
+  - check: pre-flight contract_discovery (2026-10-22)
+    result: mcp absent, openapi absent
+tools: []
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched

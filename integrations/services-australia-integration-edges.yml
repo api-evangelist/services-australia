@@ -1,0 +1,21 @@
+generated: '2026-10-22'
+method: none
+source:
+- https://zapier.com/apps/services-australia/integrations
+- https://n8n.io/integrations/services-australia/
+- https://composio.dev/toolkits/services-australia
+- https://monid.ai/tools/services-australia
+checked:
+- https://zapier.com/apps/services-australia/integrations
+- https://www.make.com/en/integrations/services-australia
+- https://n8n.io/integrations/services-australia/
+- https://composio.dev/toolkits/services-australia
+- https://monid.ai/tools/services-australia
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
+note: zapier.com and n8n.io answered 404 for the slug, and make.com answered 403. The provider's own pages (www.servicesaustralia.gov.au)
+  timed out from this environment, and no OpenAPI is held, so no contract edges exist. Third-party practice software
+  (for example Wisenet and OWNA) documents how to connect to PRODA B2B, but those are vendor help pages and were
+  not recorded as edges.

@@ -1,0 +1,55 @@
+generated: '2026-10-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 1
+  other_domain: 2
+  platform: 0
+  roles:
+  - api
+  - portal
+  - website
+hosts:
+- host: api.gov.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.gov.au
+  role: api
+  relation: other-domain
+- host: healthsoftware.humanservices.gov.au
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - DeveloperPortal
+  serves:
+  - docs
+  registrable_domain: humanservices.gov.au
+  role: portal
+  relation: other-domain
+- host: www.servicesaustralia.gov.au
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Support
+  - PrivacyPolicy
+  - TermsOfService
+  - Accessibility
+  serves:
+  - cdn
+  vendor: akamai
+  registrable_domain: servicesaustralia.gov.au
+  role: website
+  relation: own

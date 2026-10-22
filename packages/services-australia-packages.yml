@@ -1,0 +1,16 @@
+name: Services Australia packages
+generated: '2026-10-22'
+method: none
+packages: []
+note: >-
+  No first-party client library found. github.com/servicesaustralia (the agency's org, per the
+  pre-flight dossier) lists 0 public repositories (api.github.com/orgs/servicesaustralia/repos -> 200, []).
+  An npm search for "proda" returned only unrelated packages; pypi.org/pypi/proda/json -> 404.
+  Licensed development material (technical specifications, sample code) is distributed only to
+  registered vendors through the Health Systems Developer Portal, which answered 503 on 2026-10-22,
+  and www.servicesaustralia.gov.au timed out from this environment, so the docs could not be read.
+checked:
+- https://api.github.com/orgs/servicesaustralia/repos?per_page=100
+- https://registry.npmjs.org/-/v1/search?text=proda&size=5
+- https://pypi.org/pypi/proda/json
+- https://healthsoftware.humanservices.gov.au/claiming/ext-vnd/

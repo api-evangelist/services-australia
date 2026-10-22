@@ -1,23 +1,107 @@
 aid: services-australia
+
 name: Services Australia
-description: 'Services Australia is a company surfaced via the API Evangelist harvest backlog (source:
-  australia-apidays-2026) and added to the network as a stub for full-pipeline profiling.'
+
+description: Services Australia is the Australian Government agency (formerly the Department of Human Services) that delivers Centrelink, Medicare
+  and Child Support payments and services. For software developers it runs the Health Systems Developer Portal (healthsoftware.humanservices.gov.au),
+  launched in September 2020 as a secure gateway to licensed development material, technical documentation, forums and support for its health,
+  aged care and Australian Immunisation Register web services, including online claiming, with NOI/NOC certification testing for vendor software.
+
 url: https://raw.githubusercontent.com/api-evangelist/services-australia/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Government
+- Australia
+- Healthcare
+- Medicare
+- Social Services
+- Claiming
+- Web Services
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://avatars.githubusercontent.com/u/61787580?v=4
+
 common:
+- type: Hosts
+  url: hosts/services-australia-hosts.yml
+- type: Vendors
+  url: vendors/services-australia-vendors.yml
+- type: DomainSecurity
+  url: security/services-australia-domain-security.yml
 - type: Website
-  url: https://servicesaustralia.gov.au/
+  url: https://www.servicesaustralia.gov.au/
+- type: DeveloperPortal
+  url: https://healthsoftware.humanservices.gov.au/claiming/ext-vnd/
+- type: Support
+  url: https://www.servicesaustralia.gov.au/contact-us
+- type: PrivacyPolicy
+  url: https://www.servicesaustralia.gov.au/your-right-to-privacy
+- type: TermsOfService
+  url: https://www.servicesaustralia.gov.au/site-notices
+- type: Accessibility
+  url: https://www.servicesaustralia.gov.au/accessibility
+
+apis:
+- name: Services Australia Health and Aged Care Web Services
+  description: Business-to-business web services that let registered software vendors' products connect to Services Australia digital health and
+    aged care channels (Medicare Online including ECLIPSE and DVA claiming, the Australian Immunisation Register, PBS Online and aged care), authenticated
+    through PRODA B2B devices. Technical specifications and licensed development material are distributed only through the Health Systems Developer
+    Portal to registered vendors, and software must pass Notice of Integration / Notice of Connection testing; no public machine-readable contract
+    (OpenAPI, WSDL, AsyncAPI) was found.
+  humanURL: https://healthsoftware.humanservices.gov.au/claiming/ext-vnd/
+  tags:
+  - Medicare
+  - Claiming
+  - Immunisation
+  - Aged Care
+  - Web Services
+  properties:
+  - type: Documentation
+    url: https://www.servicesaustralia.gov.au/what-are-web-services
+  - type: DeveloperPortal
+    url: https://healthsoftware.humanservices.gov.au/claiming/ext-vnd/
+  aid: services-australia:services-australia-health-and-aged-care-web-services
+
+x-coverage:
+  state: covered
+  reason: identity-established-edge-unreachable
+  detail: 'Identity pass 2026-10-22. www.servicesaustralia.gov.au timed out from our network (apex returned 301 to www); healthsoftware.humanservices.gov.au
+    served a branded Service Unavailable (503) page linking to servicesaustralia.gov.au contact/privacy/site-notices/accessibility, which is an
+    edge policy, not a dead site. Developer portal identity confirmed via search (Services Australia Web Services July 2020 update). GitHub org
+    servicesaustralia exists (0 public repos, unverified, no site link) and was NOT added as a pointer. www.servicesaustralia.gov.au GET timed
+    out (no status); portal ownership source: https://ama.com.au/sites/default/files/documents/Web%20Services%20July%202020%20Update.pdf (search
+    result).'
+  evidence:
+  - url: https://servicesaustralia.gov.au/
+    status: 301
+  - url: https://healthsoftware.humanservices.gov.au/
+    status: 503
+  - url: https://healthsoftware.humanservices.gov.au/claiming/ext-vnd/glossary
+    status: 503
+  - url: https://github.com/servicesaustralia
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic
